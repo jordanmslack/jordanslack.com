@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="technology leader. python developer. data scientist.">
+
+    <title>Jordan Slack</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,400,600' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/parallax-theme/assets/animate.css">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="nav-header">
+
+  <i class="fa fa-bars fa-3x"></i>
+
+  <div class="header-links">
+      <ul>
+          <li data-menuanchor="fourthPage"><a href="#contact">contact</a></li>
+          <li data-menuanchor="thirdPage"><a href="#projects">projects</a></li>
+          <li data-menuanchor="secondPage"><a href="#about">about</a></li>
+      </ul>
+  </div>
+
+<div class="nav-screen">
+  <i class="fa fa-times fa-3x"></i>
+  <div class="nav-container">
+    <div class="nav-links">
+      <ul id='myMenu'>
+        <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
+        <li data-menuanchor="thirdPage"><a href="#projects">PROJECTS</a></li>
+        <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="fullpage">
+
+  <div class="section aboutme" data-anchor="aboutme">
+
+        <div class="opaque-bg animated fadeInDown">
+            <h1 style="color:white">jordan<span style="color:#008AFC">/</span>slack</h1>
+            <p>
+                <span id="holder"></span>
+                <span class="blinking-cursor">|</span>
+
+            </p>
+        </div>
+
+        <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
+  </div>
+
+  <div class="section" data-anchor="skills">
+      <div class="content">
+          <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">ABOUT ME</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">I'm currently Director of Technology for a financial services company in Tampa, FL. Over the course of the last several years I have taught myself various technologies and languages. I am passionate about learning, and excited by the prospect that my work can contribute to positive change in the world.</p>
+
+          <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
+
+        <div class="skillbar clearfix " data-percent="75%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>PYTHON</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">3 years</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="60%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>SQL</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">2 years</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="45%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>Javascript</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">1.5 years</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="90%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>HTML</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">4 +years</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="80%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>CSS</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">4 years</div>
+        </div>
+
+        <div class="skillbar clearfix " data-percent="85%">
+              <div class="skillbar-title" style="background: #008AFC;"><span>SALESFORCE</span></div>
+              <div class="skillbar-bar" style="background: #008AFC;"></div>
+              <div class="skill-bar-percent">3.5 years</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end section -->
+
+  <!-- begin section -->
+
+  <div class="section" data-anchor="projects">
+    <div class="content-slide">
+
+        {% for repo in repos %}
+        <div class="slide">
+          <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">{{ repo.name }}</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">{{ repo.description }}</p><br><br><br>
+          <!--img class="wow fadeInUp" data-wow-delay="0.2s" data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/xfaire.jpg"-->
+{#          <p class="wow fadeInUp" data-wow-delay="0.2s">A Science Gateway Architecture project that implements Micro-Service Architecture on AWS platform using AWS NEXRAD radar files using Java, Python, Node js, React js.</p>#}
+{#          <p class="wow fadeInUp" data-wow-delay="0.2s"> Status: <span style="color:#008AFC"> Ongoing</span></p>#}
+
+          <a href="{{ repo.html_url }}">
+              <button id=submit" class="btn btn-lg wow fadeInUp" >PROJECT LINK</button>
+          </a>
+
+        </div>
+        {% endfor %}
+
+  </div>
+
+  <div class="section" data-anchor="contact">
+    <div class="content wow fadeInDown" data-wow-delay="0.2s">
+      <h1 style="color:#008AFC">CONTACT</h1><br>
+      <p>I'd love to connect!</p>
+      <p>MAIL: <span style="color:#008AFC" id="email-view" onclick="showEmail()">Click to see email</span></p>
+      <p>PHONE: <span style="color:#008AFC" id="phone-view" onclick="showPhone()">Click to see phone number</span></p>
+      <br>
+
+      <div class="wow fadeInUp" data-wow-delay="0.5s">
+{#            <form method="get" action="https://iu.box.com/shared/static/bltrzacymd0u72bqavc26qw1yuejn6wx.pdf">#}
+{#            <button type="submit" id="submit" name="submit" class="btn btn-lg">MY RESUME</button></form>#}
+
+      <p>SOCIAL MEDIA</p>
+      <div class="social-links">
+        <span><a href="https://www.linkedin.com/in/naveenjetty" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></span>
+        <span><a target="_blank" href="https://twitter.com/naveenjetty" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></span>
+        <span><a href="https://github.com/njetty" target="_blank"><i class="fa fa-github fa-2x"></i></a></span>
+      </div>
+    </div>
+  </div>
+ </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/parallax-theme/assets/wow.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
+<script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script>
+
+    function showEmail () {
+        document.getElementById('email-view').innerText = 'jordanmslack@gmail.com'
+    }
+
+    function showPhone () {
+        document.getElementById('phone-view').innerText = '(813) 492-0531'
+    }
+</script>
+</body>
+</html>
+
+
