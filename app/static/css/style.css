@@ -40,8 +40,6 @@
   }
 
 
-  /* flash alert styles */
-
   .flash-container {
     width: 100%;
     position: fixed;
@@ -58,15 +56,13 @@
     color: #211809 !important;
   }
 
-  /* Nav Screen */
-
   .nav-screen {
     height: 100%;
     z-index: 500;
     position: fixed;
     background-color: #000;
     opacity: 1;
-     right: -285px;  /* start off behind the scenes */
+     right: -285px;
     -webkit-font-smoothing: antialiased;
     position: fixed;
     width: 285px;
@@ -75,9 +71,6 @@
   .nav-screen .active {
     display: block;
   }
-
-
-  /* nav header links */
 
   .nav-brand {
     position: fixed;
@@ -134,8 +127,6 @@
     color: #008AFC !important;
   }
 
-  /* slide out nav menu styles */
-
   .nav-container {
     padding-top: 10%;
   }
@@ -152,7 +143,6 @@
     text-align: center;
     padding-top: 10%;
   }
-
 
   .nav-links a {
     color: #FFFFFF;
