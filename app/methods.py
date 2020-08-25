@@ -1,5 +1,20 @@
+from datetime import date
 import requests
 import json
+
+
+def get_years(start, end, r=2):
+    return round((start - end).days / 365, r)
+
+
+def calculate_experience(exp):
+
+    start_date = date(2016, 6, 1)
+    today = date.today()
+    total_period = get_years(today, start_date)
+    experience = {k: [get_years(today, v, 2), get_years(today, v, 2)/total_period * 100] for k, v in exp.items()}
+
+    return experience
 
 
 class GitHub:
