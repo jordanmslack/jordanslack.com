@@ -1,3 +1,11 @@
+  function showEmail () {
+      document.getElementById('email-view').innerText = 'jordanmslack@gmail.com'
+  }
+
+  function showPhone () {
+      document.getElementById('phone-view').innerText = '(813) 492-0531'
+  }
+
 $(document).ready(function() {
 
   // typing animation

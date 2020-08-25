@@ -2,6 +2,7 @@
 <html lang="en" >
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="technology leader. python developer. data scientist.">
@@ -19,132 +20,120 @@
 
 <body>
 
-<div class="nav-header">
+    <div class="nav-header">
 
-    <i class="fa fa-bars fa-3x"></i>
+        <i class="fa fa-bars fa-3x"></i>
 
-    <div class="header-links">
-        <ul>
-            <li data-menuanchor="fourthPage"><a href="#contact">contact</a></li>
-            <li data-menuanchor="thirdPage"><a href="#projects">projects</a></li>
-            <li data-menuanchor="secondPage"><a href="#about">about</a></li>
-        </ul>
-    </div>
+        <div class="header-links">
+            <ul>
+                <li data-menuanchor="fourthPage"><a href="#contact">contact</a></li>
+                <li data-menuanchor="thirdPage"><a href="#projects">projects</a></li>
+                <li data-menuanchor="secondPage"><a href="#about">about</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-screen">
-        <i class="fa fa-times fa-3x"></i>
+        <div class="nav-screen">
+            <i class="fa fa-times fa-3x"></i>
 
-        <div class="nav-container">
+            <div class="nav-container">
 
-            <div class="nav-links">
-                <ul id='myMenu'>
-                    <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
-                    <li data-menuanchor="thirdPage"><a href="#projects">PROJECTS</a></li>
-                    <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
-                </ul>
+                <div class="nav-links">
+                    <ul id='myMenu'>
+                        <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
+                        <li data-menuanchor="thirdPage"><a href="#projects">PROJECTS</a></li>
+                        <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-</div>
+    <div id="fullpage">
 
+        <div class="section aboutme" data-anchor="aboutme">
 
-<div id="fullpage">
+            <div class="opaque-bg animated fadeInDown">
+                <h1 style="color:white">jordan<span style="color:#008AFC">/</span>slack</h1>
+                <p>
+                    <span id="holder"></span>
+                    <span class="blinking-cursor">|</span>
 
-    <div class="section aboutme" data-anchor="aboutme">
+                </p>
+            </div>
 
-        <div class="opaque-bg animated fadeInDown">
-            <h1 style="color:white">jordan<span style="color:#008AFC">/</span>slack</h1>
-            <p>
-                <span id="holder"></span>
-                <span class="blinking-cursor">|</span>
+            <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
+      </div>
 
-            </p>
-        </div>
+        <div class="section" data-anchor="skills">
 
-        <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
-  </div>
+          <div class="content">
 
-    <div class="section" data-anchor="skills">
+              <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">ABOUT ME</h1>
+              <p class="wow fadeInDown" data-wow-delay="0.2s">I'm currently Director of Technology for a financial services company in Tampa, FL. Over the course of the last several years I have taught myself various technologies and languages. I am passionate about learning, and excited by the prospect that my work can contribute to positive change in the world.</p>
 
-      <div class="content">
+               <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
+                   {% for key, value in experience.items() %}
+                        <div class="skillbar clearfix " data-percent="{{ value[1] }}%">
+                              <div class="skillbar-title" style="background: #008AFC;"><span>{{ key }}</span></div>
+                              <div class="skillbar-bar" style="background: #008AFC;"></div>
+                              <div class="skill-bar-percent">{{ value[0] }} years</div>
+                        </div>
+                    {% endfor %}
+              </div>
 
-          <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">ABOUT ME</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">I'm currently Director of Technology for a financial services company in Tampa, FL. Over the course of the last several years I have taught myself various technologies and languages. I am passionate about learning, and excited by the prospect that my work can contribute to positive change in the world.</p>
-
-           <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
-               {% for key, value in experience.items() %}
-                    <div class="skillbar clearfix " data-percent="{{ value[1] }}%">
-                          <div class="skillbar-title" style="background: #008AFC;"><span>{{ key }}</span></div>
-                          <div class="skillbar-bar" style="background: #008AFC;"></div>
-                          <div class="skill-bar-percent">{{ value[0] }} years</div>
-                    </div>
-                {% endfor %}
           </div>
 
       </div>
 
-  </div>
+        <div class="section" data-anchor="projects">
 
-    <div class="section" data-anchor="projects">
+            <div class="content-slide">
 
-        <div class="content-slide">
+                {% for repo in repos %}
+                    <div class="slide">
 
-            {% for repo in repos %}
-                <div class="slide">
+                      <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">{{ repo.name }}</h1>
+                      <p class="wow fadeInDown" data-wow-delay="0.2s">{{ repo.description }}</p><br><br><br>
 
-                  <h1 class="wow fadeInDown" data-wow-delay="0.2s" style="color:#008AFC">{{ repo.name }}</h1>
-                  <p class="wow fadeInDown" data-wow-delay="0.2s">{{ repo.description }}</p><br><br><br>
+                      <a href="{{ repo.html_url }}">
+                          <button id=submit" class="btn btn-lg wow fadeInUp" >PROJECT LINK</button>
+                      </a>
 
-                  <a href="{{ repo.html_url }}">
-                      <button id=submit" class="btn btn-lg wow fadeInUp" >PROJECT LINK</button>
-                  </a>
+                    </div>
+                {% endfor %}
 
-                </div>
-            {% endfor %}
+            </div>
+
+      </div>
+
+        <div class="section" data-anchor="contact">
+
+        <div class="content wow fadeInDown" data-wow-delay="0.2s">
+
+            <h1 style="color:#008AFC">CONTACT</h1><br>
+            <p>I'd love to connect!</p>
+            <p>MAIL: <span style="color:#008AFC" id="email-view" onclick="showEmail()">Click to see email</span></p>
+            <p>PHONE: <span style="color:#008AFC" id="phone-view" onclick="showPhone()">Click to see phone number</span></p>
+
+            <div class="social-links">
+                <span><a href="https://www.linkedin.com/in/jordan-slack-bpms%C2%AE-b9105b149/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></span>
+                <span><a href="https://github.com/jordanmslack" target="_blank"><i class="fa fa-github fa-2x"></i></a></span>
+            </div>
 
         </div>
 
-  </div>
-
-    <div class="section" data-anchor="contact">
-
-    <div class="content wow fadeInDown" data-wow-delay="0.2s">
-
-        <h1 style="color:#008AFC">CONTACT</h1><br>
-        <p>I'd love to connect!</p>
-        <p>MAIL: <span style="color:#008AFC" id="email-view" onclick="showEmail()">Click to see email</span></p>
-        <p>PHONE: <span style="color:#008AFC" id="phone-view" onclick="showPhone()">Click to see phone number</span></p>
-
-        <div class="social-links">
-            <span><a href="https://www.linkedin.com/in/jordan-slack-bpms%C2%AE-b9105b149/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></span>
-            <span><a href="https://github.com/jordanmslack" target="_blank"><i class="fa fa-github fa-2x"></i></a></span>
-        </div>
+      </div>
 
     </div>
 
-  </div>
-
-</div>
-
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/parallax-theme/assets/wow.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
-<script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
-
-<script>
-
-    function showEmail () {
-        document.getElementById('email-view').innerText = 'jordanmslack@gmail.com'
-    }
-
-    function showPhone () {
-        document.getElementById('phone-view').innerText = '(813) 492-0531'
-    }
-</script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/parallax-theme/assets/wow.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
