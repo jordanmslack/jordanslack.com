@@ -24,7 +24,7 @@ $(document).ready(function() {
   })(jQuery);
 
   // input text for typing animation 
-  $("#holder").writeText("technology leader. python developer. data scientist.");
+  $("#holder").writeText("engineering leader. python developer. always learning.");
 
   // initialize wow.js
   new WOW().init();
